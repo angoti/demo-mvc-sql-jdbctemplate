@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragmentos/layout">
+<div th:fragment="conteudo">
+
+  <div class="container">
+    <h1>Atualiza aluno</h1>
+    <form action="/atualiza-aluno" method="post" th:object="${aluno}">
+      Login:<input class="form-control" type="text" th:field="*{usuario.login}" maxlength="10" readonly><br>
+      RG:<input class="form-control" type="number" th:field="*{usuario.rg}"><br>
+      Telefone:<input class="form-control" type="tel" th:field="*{usuario.telefone}"><br>
+      Endereço:<input class="form-control" type="text" th:field="*{usuario.endereco}"><br>
+      Data de nascimento:<input type="date" th:field="*{usuario.dataNasc}"><br>
+      E-mail:<input class="form-control" type="email" th:field="*{usuario.email}"><br>
+      Nome:<input class="form-control" type="text" th:field="*{usuario.nome}"><br>
+      CPF:<input class="form-control" type="number" th:field="*{usuario.cpf}"><br>
+      Matricula:<input class="form-control" type="text" th:field="*{matricula}"><br>
+      Nome da mãe:<input class="form-control" type="text" th:field="*{nomeMae}"><br>
+      Nome do pai:<input class="form-control" type="text" th:field="*{nomePai}"><br>
+      Data da matrícula:<input class="form-control" type="date" th:field="*{dataMatricula}"><br>
+      Telefone do responsável:<input class="form-control" type="tel" th:field="*{telResponsavel}"><br>
+      <input type="submit">
+    </form>
+  </div>
+
+</div>
+
+</html>

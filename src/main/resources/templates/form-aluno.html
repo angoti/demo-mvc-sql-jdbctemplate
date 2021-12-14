@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="fragmentos/layout">
+<div th:fragment="conteudo">
+
+  <div class="container">
+    <h1>Novo aluno</h1>
+    <form th:action="@{/novo-aluno}" method="post" th:object="${aluno}">
+      Login:<input class="form-control" type="text" th:field="*{usuario.login}" maxlength="10" required><br>
+      Senha:<input class="form-control" type="password" th:field="*{usuario.senha}" maxlength="10" required><br>
+      RG:<input class="form-control" type="number" th:field="*{usuario.rg}" maxlength="11" required><br>
+      <div class="form-group">
+        Telefone:<input class="form-control" type="tel" th:field="*{usuario.telefone}" maxlength="11">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('usuario.telefone')}" th:errors="*{usuario.telefone}"></div>
+      </div>
+      <br>
+      Endereço:<input class="form-control" type="text" th:field="*{usuario.endereco}" required><br>
+      Data de nascimento:<input type="date" th:field="*{usuario.dataNasc}" required><br>
+      E-mail:<input class="form-control" type="email" th:field="*{usuario.email}"><br>
+      Nome:<input class="form-control" type="text" th:field="*{usuario.nome}" required><br>
+      CPF:<input class="form-control" type="number" th:field="*{usuario.cpf}" maxlength="11"><br>
+      Matricula:<input class="form-control" type="text" th:field="*{matricula}" maxlength="14"><br>
+      Nome da mãe:<input class="form-control" type="text" th:field="*{nomeMae}" required><br>
+      Nome do pai:<input class="form-control" type="text" th:field="*{nomePai}" required><br>
+      Data da matrícula:<input class="form-control" type="date" th:field="*{dataMatricula}"><br>
+      <div class="form-group">
+        Telefone do responsável:<input class="form-control" type="tel" th:field="*{telResponsavel}" maxlength="11">
+        <div class="alert alert-warning" th:if="${#fields.hasErrors('telResponsavel')}" th:errors="*{telResponsavel}"></div>
+      </div>
+      <br>
+      <input type="submit">
+    </form>
+  </div>
+
+</div>
+
+</html>
