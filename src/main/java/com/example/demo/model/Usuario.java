@@ -2,14 +2,14 @@ package com.example.demo.model;
 
 import java.sql.Date;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 public class Usuario implements java.io.Serializable {
 
 	private String login;
 	private String senha;
 	private Integer rg;
-	@NotEmpty
+	@NotNull(message = "Erro")
 	private Integer telefone;
 	private Date dataNasc;
 	private String email;
