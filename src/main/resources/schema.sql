@@ -1,3 +1,17 @@
+CREATE TABLE `usuario` (
+  `login` varchar(10) NOT NULL,
+  `senha` varchar(10) NOT NULL,
+  `rg` int(11) NOT NULL,
+  `telefone` int(11) DEFAULT NULL,
+  `data_nasc` date NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cpf` int(11) NOT NULL,
+  `endereco` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`login`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
 CREATE TABLE `administrador` (
   `cod_adm` int(11) DEFAULT NULL,
   `usuario_login` varchar(10) NOT NULL,
@@ -29,15 +43,3 @@ CREATE TABLE `sala` (
   PRIMARY KEY (`cod_sala`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE `usuario` (
-  `login` varchar(10) NOT NULL,
-  `senha` varchar(10) NOT NULL,
-  `rg` int(11) NOT NULL,
-  `telefone` int(11) DEFAULT NULL,
-  `data_nasc` date NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `nome` varchar(100) NOT NULL,
-  `cpf` int(11) NOT NULL,
-  `endereco` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`login`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
